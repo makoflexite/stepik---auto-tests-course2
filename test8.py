@@ -31,6 +31,7 @@ try:
     button = browser.find_element_by_id("solve")
     button.click()
 
+
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(20)
