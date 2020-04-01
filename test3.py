@@ -30,6 +30,7 @@ try:
     browser.execute_script("return arguments[0].scrollIntoView(true);", button)
     button.click()
 
+
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(10)
