@@ -2,20 +2,21 @@ from selenium import webdriver
 import time
 
 try:
-    link = "http://suninjuly.github.io/registration2.html"
+    link = "http://suninjuly.github.io/registration1.html"
+    # link = "http://suninjuly.github.io/registration2.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    required_fields = browser.find_elements_by_css_selector('input[required]')
-
-    for item in required_fields:
-        item.send_keys('Зубенко Михаил Петрович')
-
-
+    input1 = browser.find_element_by_xpath("//input[@placeholder='Input your first name']")
+    input1.send_keys("Ivan")
+    input2 = browser.find_element_by_xpath("//input[@placeholder='Input your last name']")
+    input2.send_keys("Petrov")
+    input3 = browser.find_element_by_xpath("//input[@placeholder='Input your email']")
+    input3.send_keys("1@1.1")
 
     # Отправляем заполненную форму
-    button = browser.find_element_by_css_selector("button.btn")
+    button = browser.find_element_by_class_name("btn")
     button.click()
 
     # Проверяем, что смогли зарегистрироваться
